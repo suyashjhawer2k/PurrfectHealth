@@ -1,0 +1,46 @@
+/* src/Home.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    position: relative;
+  }
+  
+  .header {
+    color: #333;
+  }
+  
+  .button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  .file-input {
+    margin-top: 20px;
+  }
+  
+  .disease-info {
+    margin-top: 20px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .button.signout {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
