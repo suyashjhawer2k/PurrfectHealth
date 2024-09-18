@@ -23,7 +23,8 @@ Purrfect Health allows users to upload images of their cats for disease detectio
 
 This project uses a completely serverless architecture leveraging various AWS services. Here's an overview of the key components:
 
-![alt text](image.png)
+![image](https://github.com/user-attachments/assets/a08f2ba1-8ef9-4b21-92de-b6c212657fb4)
+
 
 1. **Frontend**: React-based web application hosted on AWS EC2
 2. **Authentication**: User signup and login managed through AWS Cognito
