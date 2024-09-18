@@ -55,7 +55,7 @@ function Home({ user, signOut }) {
     };
     try {
       simulateLoading();
-      const response = await fetch('https://6j9oqeufye.execute-api.us-east-1.amazonaws.com/catDiseasePrediction', {
+      const response = await fetch('API TO RUN THE MODEL', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ function Home({ user, signOut }) {
 
   const handleShowReportModal = async () => {
     try {
-      const response = await fetch('https://6c1sdouc31.execute-api.us-east-1.amazonaws.com/reportGeneration', {
+      const response = await fetch('API FOR REPORT GENERATION', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ function About({ user }) {
 
   const handleSignUp = async () => {
     try {
-      const response = await fetch('https://q44h3fi2ub.execute-api.us-east-1.amazonaws.com/e1', {
+      const response = await fetch('API FOR SNS SUBSCRIPTION', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -17,7 +17,7 @@ function History({ user, signOut }) {
       setLoading(true);
       setLoadingProgress(0);
       simulateLoading();
-      const response = await fetch('https://ghxx6udvtd.execute-api.us-east-1.amazonaws.com/userIdData', {
+      const response = await fetch('API TO FETCH USER HISTORY', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

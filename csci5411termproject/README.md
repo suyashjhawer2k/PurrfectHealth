@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# Purrfect Health
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Purrfect Health is a serverless web application that helps cat owners identify potential health issues in their feline companions through image analysis.
 
-## Available Scripts
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [Architecture](#architecture)
+3. [Getting Started](#getting-started)
+   - [Prerequisites](#prerequisites)
+   - [Installation](#installation)
+4. [Running the Application](#running-the-application)
+5. [Features](#features)
+6. [Deployment](#deployment)
+7. [Contributing](#contributing)
+8. [License](#license)
+9. [Acknowledgements](#acknowledgements)
 
-In the project directory, you can run:
+## Project Overview
 
-### `npm start`
+Purrfect Health allows users to upload images of their cats for disease detection. The application uses advanced image recognition technology to analyze the uploaded images and provide insights into potential health concerns.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Architecture
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This project uses a completely serverless architecture leveraging various AWS services. Here's an overview of the key components:
 
-### `npm test`
+![alt text](image.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Frontend**: React-based web application hosted on AWS EC2
+2. **Authentication**: User signup and login managed through AWS Cognito
+3. **API Gateway**: Handles incoming requests and routes them to appropriate Lambda functions
+4. **Lambda Functions**: Serverless compute for various functionalities:
+   - Image processing
+   - Disease detection
+   - User data management
+   - Subscription updates
+5. **S3 Bucket**: Stores uploaded cat images
+6. **Amazon Rekognition**: Performs image analysis for disease detection
+7. **DynamoDB**: Stores user data and prediction history
+8. **SNS**: Manages email subscriptions and notifications
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js and npm installed
+- AWS account with necessary permissions
+- AWS CLI configured with your credentials
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+1. Clone the repository:
+   ```
+   git clone [repo-url]
+   cd purrfect-health
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Configure AWS services:
+   - Set up Cognito User Pool
+   - Create necessary Lambda functions
+   - Configure API Gateway
+   - Set up S3 bucket
+   - Configure DynamoDB tables
+   - Set up SNS topics
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Update configuration:
+   - Rename `config.example.js` to `config.js`
+   - Fill in your AWS resource identifiers and API endpoints
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Running the Application
 
-## Learn More
+To start the development server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The application will be available at `http://localhost:3000`.
 
-### Code Splitting
+## Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- User authentication and account management
+- Cat image upload and storage
+- Automated disease detection using image recognition
+- User-friendly interface for viewing results
+- Email notifications for important updates
 
-### Analyzing the Bundle Size
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Build the React application:
+   ```
+   npm run build
+   ```
 
-### Making a Progressive Web App
+2. Deploy the built files to your EC2 instance or preferred hosting service.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. Ensure all AWS services are properly configured and permissions are set.
 
-### Advanced Configuration
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+We welcome contributions to Purrfect Health! Please read our contributing guidelines before submitting pull requests.
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+[Insert your chosen license here]
 
-### `npm run build` fails to minify
+## Acknowledgements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started)
+- [React documentation](https://reactjs.org/)
+- AWS for providing the serverless infrastructure
+
